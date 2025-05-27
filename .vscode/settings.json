@@ -1,14 +1,23 @@
 {
-    "cSpell.words": [
-        "Accesorios",
-        "Agregar",
-        "Carrito",
-        "Conexión",
-        "Contáctanos",
-        "Destacado",
-        "Nombre",
-        "Producto",
-        "Regalo",
-        "Tarjetas"
-    ]
+  "cSpell.words": [
+    "extglob",
+    "fastq",
+    "globjoin",
+    "hookified",
+    "arrayish",
+    "fullwidth",
+    "isexe",
+    "mathml",
+    "nanomatch",
+    "pascalcase",
+    "nextick",
+    "readdirp",
+    "reusify",
+    "toidentifier",
+    "upath",
+    "urix",
+    "accesorios",
+    "anymatch",
+    "callsites"
+  ]
 }
