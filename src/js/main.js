@@ -7,8 +7,8 @@ function uploadImage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const uploadButton = document.getElementById('uploadImageBtn');
-  if (uploadButton) {
-    uploadButton.addEventListener('click', uploadImage);
-  }
+  // const uploadButton = document.getElementById('uploadImageBtn'); // Botón usa onclick directamente
+  // if (uploadButton) {
+    // uploadButton.addEventListener('click', uploadImage);
+  // }
 });

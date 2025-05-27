@@ -1,9 +1,75 @@
 body {
-  
-  text-align: center;
-  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
 }
-input, button {
-  margin: 10px;
+
+.login-container {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.form-group input {
+  width: 100%;
   padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Para incluir padding y border en el width/height total */
+}
+
+.btn-submit {
+  background-color: #e91e63; /* Color primario del tema */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #d81b60; /* Un tono más oscuro del primario */
+}
+
+.registro-section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.registro-section h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.registro-section p {
+  color: #555;
+  font-size: 0.9em;
 }
