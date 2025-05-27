@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url('../../publico/imagenes/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.banner {
+  background-color: #e91e63;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+}
+.logo {
+  height: 40px;
+}
+.utilities a, .utilities button {
+  margin-left: 10px;
+  text-decoration: none;
+}
+.main-menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  background: white;
+}
+.main-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.main-menu li:hover {
+  background-color: #f8f8f8;
+  color: #e91e63;
+}
+button:hover, a:hover {
+  opacity: 0.8;
+}
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.producto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+}
+.categorias img {
+  width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  .main-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-top {
+    flex-direction: column;
+  }
+
+  .utilities {
+    margin-top: 10px;
+  }
+}
