@@ -1,12 +1,28 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: sans-serif;
-  background: url('../../publico/imagenes/fondo.jpg') no-repeat center center fixed;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #e91e63;
+  --secondary-color: #f8f8f8;
+  --text-color-light: white;
+  --text-color-dark: #333; /* Añadido para texto general */
+  --border-color: #ccc;
+  --default-font: sans-serif;
+  --logo-height: 40px; /* Variable para la altura del logo */
+}
+
+body {
+  font-family: var(--default-font);
+  color: var(--text-color-dark);
+  background: url('../../publico/imagenes/logo1.jpeg') no-repeat center center fixed;
   background-size: cover;
 }
 .banner {
-  background-color: #e91e63;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
   text-align: center;
   padding: 10px;
 }
@@ -14,11 +30,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: var(--text-color-light); /* Assuming white background */
   padding: 10px;
 }
 .logo {
-  height: 40px;
+  height: var(--logo-height);
 }
 .utilities a, .utilities button {
   margin-left: 10px;
@@ -29,7 +45,7 @@ body {
   list-style: none;
   justify-content: center;
   padding: 0;
-  background: white;
+  background: var(--text-color-light); /* Assuming white background */
 }
 .main-menu li {
   padding: 10px 20px;
@@ -37,8 +53,8 @@ body {
 }
 
 .main-menu li:hover {
-  background-color: #f8f8f8;
-  color: #e91e63;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 button:hover, a:hover {
   opacity: 0.8;
@@ -49,7 +65,7 @@ button:hover, a:hover {
   gap: 20px;
 }
 .producto {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   padding: 10px;
   text-align: center;
 }

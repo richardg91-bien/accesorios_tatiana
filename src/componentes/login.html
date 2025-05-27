@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>Login / Registro</h1>
-  <form onsubmit="return iniciarSesion();">
-    <input type="email" placeholder="Email" required /><br/>
-    <input type="password" placeholder="Contraseña" required /><br/>
+    <form id="loginForm">
+    <input type="email" placeholder="Email" required aria-label="Correo electrónico" /><br/>
+    <input type="password" placeholder="Contraseña" required aria-label="Contraseña" /><br/>
     <button type="submit">Entrar</button>
   </form>
   <script src="/src/js/login.js"></script>
