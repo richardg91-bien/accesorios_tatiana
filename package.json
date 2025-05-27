@@ -1,25 +1,25 @@
-
-  {
+{
     "name": "app",
     "version": "1.0.0",
     "description": "Proyecto accesorios_tatiana.",
     "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "live-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/richardg91-bien/accesorios_tatiana.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/richardg91-bien/accesorios_tatiana/issues"
-  },
-  "homepage": "https://github.com/richardg91-bien/accesorios_tatiana#readme",
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "live-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/richardg91-bien/accesorios_tatiana.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/richardg91-bien/accesorios_tatiana/issues"
+    },
+    "homepage": "https://github.com/richardg91-bien/accesorios_tatiana#readme",
+    "devDependencies": {
+        "live-server": "^1.2.2"
+    },
+    "type": "commonjs"
 }
