@@ -20,12 +20,55 @@ body {
   background: url('../../publico/imagenes/logo1.jpeg') no-repeat center center fixed;
   background-size: cover;
 }
-.banner {
-  background-color: var(--primary-color);
-  color: var(--text-color-light);
-  text-align: center;
-  padding: 10px;
+body, header {
+  margin: 0;
+  padding: 0;
 }
+header {
+  border: 1px solid red;
+}
+
+
+
+    
+
+
+.banner {
+  overflow: hidden;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid red;
+  white-space: nowrap;
+}
+
+.banner-track {
+  display: flex;
+}
+
+.banner-content {
+  display: inline-flex;
+  animation: scroll-banner 20s linear infinite;
+}
+
+.banner-content span {
+  margin: 0 2rem;
+  white-space: nowrap;
+}
+
+
+@keyframes scroll-banner {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
 .nav-top {
   display: flex;
   justify-content: space-between;

@@ -2,34 +2,24 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Proyecto accesorios_tatiana.",
+  "keywords": [],
+  "homepage": "https://github.com/richardg91-bien/accesorios_tatiana#readme",
+  "bugs": {
+    "url": "https://github.com/richardg91-bien/accesorios_tatiana/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardg91-bien/accesorios_tatiana.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "live-server",
     "lint:css": "stylelint '**/*.{css,scss,html,js}'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/richardg91-bien/accesorios_tatiana.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/richardg91-bien/accesorios_tatiana/issues"
-  },
-  "homepage": "https://github.com/richardg91-bien/accesorios_tatiana#readme",
-  "devDependencies": {
-    "live-server": "^1.2.2",
-    "stylelint": "^16.19.1",
-    "stylelint-config-html": "^1.1.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-recommended": "^13.0.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-config-tailwindcss": "^1.0.0",
-    "stylelint-scss": "^6.1.0"
-  },
-  "type": "commonjs",
   "dependencies": {
     "accepts": "^1.3.8",
     "ajv": "^8.17.1",
@@ -261,5 +251,15 @@
     "websocket-extensions": "^0.1.4",
     "which": "^1.3.1",
     "write-file-atomic": "^5.0.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "stylelint": "^16.19.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "stylelint-scss": "^6.1.0"
   }
 }
