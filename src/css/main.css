@@ -39,6 +39,7 @@ header {
   color: #721c24;
   border: 1px solid red;
   white-space: nowrap;
+  white-space: nowrap;
 }
 
 .banner-track {
@@ -46,14 +47,18 @@ header {
 }
 
 .banner-content {
-  display: inline-flex;
+  display: flex;
   animation: scroll-banner 20s linear infinite;
+  flex-shrink: 0; /* Prevent shrinking */
+  width: max-content; /* Ensure width is strictly based on content */
+  transform: translateZ(0); /* Promote to own rendering layer for smoothness */
 }
 
 .banner-content span {
-  margin: 0 2rem;
+  padding: 0 2rem; /* Changed from margin to padding */
   white-space: nowrap;
 }
+
 
 
 @keyframes scroll-banner {
