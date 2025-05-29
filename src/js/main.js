@@ -1,23 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const bannerTrack = document.getElementById('bannerTrack');
+  const bannerTrack = document.querySelector('.banner-track');
   const bannerContent = document.getElementById('bannerContent');
 
-  // Duplicar contenido dinámicamente
-  const clone = bannerContent.cloneNode(true);
-  bannerTrack.appendChild(clone);
-
-  let position = 0;
-  const speed = 1;
-
-  function animate() {
-    position -= speed;
-    if (Math.abs(position) >= bannerContent.offsetWidth) {
-      position = 0;
+  if (bannerTrack && bannerContent) {
+    if (bannerTrack.children.length === 1 && bannerTrack.firstElementChild) {
+      const clone = bannerContent.cloneNode(true);
+      bannerTrack.appendChild(clone);
     }
-
-    bannerTrack.style.transform = `translateX(${position}px)`;
-    requestAnimationFrame(animate);
+  } else {
+    console.error("Error: No se encontraron los elementos del banner.");
   }
-
-  animate();
 });

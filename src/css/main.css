@@ -28,44 +28,52 @@ header {
   border: 1px solid red;
 }
 
-
-
-    
-
-
 .banner {
   overflow: hidden;
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid red;
-  white-space: nowrap;
-  white-space: nowrap;
-}
+  background: #090909; /* Consider removing if a different style is intended or consolidating */
+  color: #f7f5f5; /* Consider removing if a different style is intended or consolidating */
+  /* border: 1px solid red; */ /* DEBUG BORDER - consider removing */
 
-.banner {
-  overflow: hidden;
-  background: #f8d7da;
-  color: #721c24;
-  white-space: nowrap;
+white-space: nowrap;
   height: 40px; /* Ajusta la altura si deseas */
-  display: flex;
-  align-items: center;
+  display: flex; /* Added to ensure vertical alignment if not already present from other .banner rule */
+  align-items: center; /* Added to ensure vertical alignment */
 }
+#bannerContent {
+  display: flex;              /* <-- clave para evitar superposición */
+  flex-shrink: 0;             /* <-- evita que se comprima */
+  animation: scroll-left 20s linear infinite;
+}
+
+
+
 
 .banner-track {
   display: flex;
-  will-change: transform;
+  overflow: hidden;
+  white-space: nowrap;
 }
-
 .banner-content {
   display: flex;
+  width: 50%;
   white-space: nowrap;
 }
 
-.banner-content span {
+#bannerContent span {
   padding: 0 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  display: inline-block;
 }
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
 
 
