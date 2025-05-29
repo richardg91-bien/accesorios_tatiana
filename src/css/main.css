@@ -41,8 +41,8 @@ white-space: nowrap;
 }
 #bannerContent {
   display: flex;              /* <-- clave para evitar superposición */
-  flex-shrink: 0;             /* <-- evita que se comprima */
-  animation: scroll-left 20s linear infinite;
+            /* <-- evita que se comprima */
+  
 }
 
 
@@ -52,15 +52,16 @@ white-space: nowrap;
   display: flex;
   overflow: hidden;
   white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
 }
 .banner-content {
   display: flex;
-  width: 50%;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 #bannerContent span {
-  padding: 0 2rem;
+  padding: 0;
   font-size: 1.5rem;
   display: inline-block;
 }
@@ -73,12 +74,6 @@ white-space: nowrap;
     transform: translateX(-100%);
   }
 }
-
-
-
-
-
-
 
 .nav-top {
   display: flex;
@@ -130,6 +125,11 @@ button:hover, a:hover {
   margin: 0 auto;
 
 }
+.categorias {
+  display:grid;
+  grid-template-columns: repeat(autofill, minmax(200px, 1fr))
+   }
+
 .categorias img {
   width: 100%;
   height: auto;
