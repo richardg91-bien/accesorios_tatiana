@@ -1,44 +1,23 @@
-function goToSearch() {
-  window.location.href = 'src/componentes/buscar.html';
-}
-
-function uploadImage() {
-  alert('Función de búsqueda por imagen aún no implementada.');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  const bannerTrack = document.querySelector('.banner-track');
-  const bannerContent = document.querySelector('.banner-content');
-  let currentScrollX = 0;
-  // To add speed controls, this variable can be updated dynamically.
-  let animationSpeed = 1;
+  const bannerTrack = document.getElementById('bannerTrack');
+  const bannerContent = document.getElementById('bannerContent');
 
-  function scrollBanner() {
-    currentScrollX -= animationSpeed;
-    bannerContent.style.transform = `translateX(${currentScrollX}px)`;
+  // Duplicar contenido dinámicamente
+  const clone = bannerContent.cloneNode(true);
+  bannerTrack.appendChild(clone);
 
-    // Reset scroll if banner has scrolled past half of its content
-    if (bannerContent.scrollWidth > 0) { // Ensure scrollWidth is available
-      const contentWidthHalf = bannerContent.scrollWidth / 2;
-      if (Math.abs(currentScrollX) >= contentWidthHalf) {
-        currentScrollX = 0;
-        // No need to apply transform here, it will be applied in the next frame
-        // or could be applied immediately if desired:
-        // bannerContent.style.transform = `translateX(${currentScrollX}px)`;
-      }
+  let position = 0;
+  const speed = 1;
+
+  function animate() {
+    position -= speed;
+    if (Math.abs(position) >= bannerContent.offsetWidth) {
+      position = 0;
     }
+
+    bannerTrack.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
   }
 
-  function animationLoop() {
-    scrollBanner();
-    requestAnimationFrame(animationLoop);
-  }
-
-  
-  // Start the animation loop
-  animationLoop();
-  // const uploadButton = document.getElementById('uploadImageBtn'); // Botón usa onclick directamente
-  // if (uploadButton) {
-    // uploadButton.addEventListener('click', uploadImage);
-  // }
+  animate();
 });

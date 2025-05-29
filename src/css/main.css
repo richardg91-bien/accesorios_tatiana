@@ -42,33 +42,31 @@ header {
   white-space: nowrap;
 }
 
+.banner {
+  overflow: hidden;
+  background: #f8d7da;
+  color: #721c24;
+  white-space: nowrap;
+  height: 40px; /* Ajusta la altura si deseas */
+  display: flex;
+  align-items: center;
+}
+
 .banner-track {
   display: flex;
+  will-change: transform;
 }
 
 .banner-content {
   display: flex;
-  animation: scroll-banner 20s linear infinite;
-  flex-shrink: 0; /* Prevent shrinking */
-  width: max-content; /* Ensure width is strictly based on content */
-  transform: translateZ(0); /* Promote to own rendering layer for smoothness */
-}
-
-.banner-content span {
-  padding: 0 2rem; /* Changed from margin to padding */
   white-space: nowrap;
 }
 
-
-
-@keyframes scroll-banner {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.banner-content span {
+  padding: 0 2rem;
+  font-weight: bold;
 }
+
 
 
 
@@ -130,17 +128,4 @@ button:hover, a:hover {
 }
 
 
-@media (max-width: 768px) {
-  .main-menu ul {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .nav-top {
-    flex-direction: column;
-  }
-
-  .utilities {
-    margin-top: 10px;
-  }
-}
