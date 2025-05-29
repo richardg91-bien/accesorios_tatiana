@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerContent = document.getElementById('bannerContent');
 
   if (bannerTrack && bannerContent) {
-    if (bannerTrack.children.length === 1 && bannerTrack.firstElementChild) {
-      const clone = bannerContent.cloneNode(true);
-      bannerTrack.appendChild(clone);
-    }
+    // Code for duplicating banner elements removed as per request
   } else {
     console.error("Error: No se encontraron los elementos del banner.");
   }
