@@ -3,23 +3,26 @@
   margin: 0;
   padding: 0;
 }
+/* Definición de variables CSS globales */
 
 :root {
-  --primary-color: #e91e63;
-  --secondary-color: #f8f8f8;
-  --text-color-light: white;
-  --text-color-dark: #333; /* Añadido para texto general */
-  --border-color: #ccc;
-  --default-font: sans-serif;
-  --logo-height: 40px; /* Variable para la altura del logo */
+ --primary-color: #e91e63; /* Color principal para acentos y elementos destacados */
+  --secondary-color: #f8f8f8; /* Color secundario, usado para fondos o bordes sutiles */
+  --text-color-light: white;   /* Color de texto claro, para usar sobre fondos oscuros */
+  --text-color-dark: #333;    /* Color de texto oscuro, para texto general sobre fondos claros */
+  --border-color: #ccc;       /* Color estándar para bordes */
+  --default-font: sans-serif; /* Fuente por defecto para la aplicación */
+  --logo-height: 40px;        /* Altura estándar para el logo */
 }
 
 body {
   font-family: var(--default-font);
   color: var(--text-color-dark);
-  background: url('../../publico/imagenes/logo1.jpeg') no-repeat center center fixed;
+  background: url('../../publico/imagenes/logo1.jpeg') no-repeat center center fixed; /* Imagen de fondo fija */
   background-size: cover;
-  margin-top: 140px;/* Ajustá según la altura total del header */
+  /* Margen superior para dejar espacio al header fijo.
+     Calculado como: altura del .banner (60px) + altura .nav-top (aprox 70px) + altura .main-menu li (aprox 36px) = 166px */
+  margin-top: 166px;
 
 }
 
@@ -92,26 +95,21 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 15px 30px;
+  
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  
+
+background-color: transparent; /* Estado inicial del header: fondo transparente */
+transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transición suave para cambios de fondo y sombra */
+  /* El padding y display:flex fueron eliminados de aquí, ya que #mainHeader es el contenedor de .banner, .nav-top y .main-menu */
 }
 
+/* Estilos para el header cuando el usuario ha hecho scroll */
 #mainHeader.scrolled {
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: white; /* Fondo blanco cuando se hace scroll */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra sutil para dar profundidad */
 }
 
-.main-menu {
-  background-color: white;
-  position: sticky;
-  top: 80px;
-  z-index: 999;
-}
 
 /* Ajuste del logo y elementos */
 .logo {
@@ -123,51 +121,6 @@ header {
   object-fit: cover;
   border-radius: 10px;
 }
-.carousel-images {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  z-index: 1;
-}
-.carousel-images img.active {
-  opacity: 1;
-  z-index: 2;
-}
-.carousel-images button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 5px;
-}
-
-.carousel-images .prev {
-  left: 10px;
-}
-
-.carousel-images .next {
-  right: 10px;
-}
-
-
-
 .banner {
   overflow: hidden;
   background: black;
@@ -184,20 +137,21 @@ header {
 .banner-track {
   display: flex;
   width: fit-content;
-  animation: scrollBanner 25s linear infinite;
+  animation: scrollBanner 25s linear infinite; /* Aplicación de la animación de scroll */
 }
 .banner-content {
-  display: flex;
-  gap: 50px;
+  display: flex; /* Organiza los mensajes del banner en línea */
+  gap: 50px; /* Espacio entre mensajes */
 }
 
 .banner-content span {
-  padding: 0 30px;
-  flex-shrink: 0;
+  padding: 0 30px; /* Espaciado interno de cada mensaje */
+  flex-shrink: 0; /* Evita que los mensajes se encojan */
   display: flex;
   align-items: center;
 }
-/* Animación continua, sin cortes */
+
+/* Animación para el scroll horizontal infinito del banner */
 @keyframes scrollBanner {
   0% {
     transform: translateX(0);
@@ -229,7 +183,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--text-color-light); /* Assuming white background */
+  transition: background-color 0.5s ease; /* Para suavizar cambio de fondo */
   padding: 10px;
 }
 .logo {
@@ -244,7 +198,7 @@ header {
   list-style: none;
   justify-content: center;
   padding: 0;
-  background: var(--text-color-light); /* Assuming white background */
+  transition: background-color 0.5s ease; /* Para suavizar cambio de fondo */
 }
 .main-menu li {
   padding: 10px 20px;
@@ -284,6 +238,36 @@ button:hover, a:hover {
   width: 100%;
   height: auto;
 }
+/* --- Estilos dinámicos para el Header Interactivo --- */
+
+/* Por defecto (header transparente, sin clase .scrolled): .nav-top y .main-menu ul son transparentes */
+#mainHeader .nav-top,
+#mainHeader .main-menu ul {
+  background-color: transparent;
+}
+
+/* Cuando #mainHeader tiene la clase .scrolled: .nav-top y .main-menu ul tienen fondo blanco */
+#mainHeader.scrolled .nav-top,
+#mainHeader.scrolled .main-menu ul {
+  background-color: var(--text-color-light); /* --text-color-light es 'white' */
+}
+
+/* Colores del texto y enlaces dentro del header */
+/* Por defecto (header transparente): texto y enlaces en color claro (blanco) para contraste con el carrusel */
+#mainHeader .nav-top a,
+#mainHeader .nav-top button, /* Botones dentro de .utilities */
+#mainHeader .main-menu ul li a {
+  color: var(--text-color-light);
+  transition: color 0.5s ease; /* Transición suave para el cambio de color */
+}
+
+/* Cuando #mainHeader tiene .scrolled: texto y enlaces en color oscuro para contraste con el fondo blanco */
+#mainHeader.scrolled .nav-top a,
+#mainHeader.scrolled .nav-top button,
+#mainHeader.scrolled .main-menu ul li a {
+  color: var(--text-color-dark);
+}
+/* --- Fin de Estilos dinámicos para el Header Interactivo --- */
 
 
 
