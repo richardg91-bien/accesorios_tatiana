@@ -1,19 +1,23 @@
+//banner del header, continuidad del span
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('main.js para banner ejecutado - INICIO');
-
-  const bannerTrack = document.querySelector('.banner-track'); // Lo mantenemos por si acaso, pero no se usa activamente en esta prueba.
+  const bannerTrack = document.getElementById('bannerTrack');
   const bannerContent = document.getElementById('bannerContent');
 
-  if (bannerContent) {
-    console.log('bannerContent encontrado:', bannerContent);
-    bannerContent.style.border = '5px solid red';
-    bannerContent.innerHTML += '<span style="color: red;"> [JS MODIFICADO!]</span>'; // Añadir algo visible
-    console.log('Estilo de borde y contenido modificado en bannerContent.');
-  } else {
-    console.error('Error: No se encontró el elemento #bannerContent.');
+  if (bannerTrack && bannerContent) {
+    const clone = bannerContent.cloneNode(true);
+    bannerTrack.appendChild(clone); // Pega el duplicado para que no haya salto
   }
-
-  // Toda la lógica de clonación anterior ha sido eliminada para esta prueba.
-
-  console.log('main.js para banner ejecutado - FIN');
 });
+
+
+let currentIndex = 0;
+const images = document.querySelectorAll('.hero-carousel img');
+
+function showNextImage() {
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add('active');
+}
+
+images[0].classList.add('active');
+setInterval(showNextImage, 3000);
